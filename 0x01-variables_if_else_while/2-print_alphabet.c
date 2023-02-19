@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - prints alpha in lower case
@@ -6,12 +7,11 @@
  */
 int main(void)
 {
-	char lc;
+	char l;
 
-	for lc = "a"; lc <= "z"; lc++
+	for (l = 'a'; l <= 'z'; l++)
 	{
-		putchar(lc);
+		putchar(l);
 	}
-	putchar("\n");
 	return (0);
 }
