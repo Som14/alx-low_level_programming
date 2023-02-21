@@ -13,8 +13,8 @@ int main(void)
 
 	for (c = 0; c < 100; c++)
 	{
-		putchar(a + '0');
-		if (a < 99)
+		putchar(c + '0');
+		if (c < 99)
 		{
 			putchar(',');
 			putchar(' ');
