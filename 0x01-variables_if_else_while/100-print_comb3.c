@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - prints all possible different combinations of two digits
@@ -7,11 +8,12 @@
 int main(void)
 {
 	int c;
+	int d;
 
-	for (c = 0; c < 10; c++)
+	for (c = 0; c <= 99; c++)
 	{
-		putchar(c + '0');
-		if (c < 9)
+		putchar(c);
+		for (d = 0; d <= 99; d++)
 		{
 			putchar(',');
 			putchar(' ');
