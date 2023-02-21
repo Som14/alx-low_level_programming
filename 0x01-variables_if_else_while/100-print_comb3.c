@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 /**
  * main - prints all possible different combinations of two digits
@@ -13,10 +14,13 @@ int main(void)
 	for (c = 0; c < 100; c++)
 	{
 		putchar(a + '0');
-		putchar(',');
-		putchar(' ');
-				}
+		if (a < 99)
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
+
 	putchar('\n');
 	Return(0);
 }
