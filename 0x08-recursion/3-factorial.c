@@ -2,7 +2,7 @@
 
 /**
  * factorial - factorial of a given number
- * @s: pointer block to fill
+ * @n: pointer block to fill
  * Return: strlen_recursion
  */
 int factorial(int n)
