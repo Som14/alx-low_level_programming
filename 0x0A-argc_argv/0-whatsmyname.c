@@ -7,7 +7,7 @@
  * without having to compile it again.
  * You should not remove the path before the name of the program
  * @argc: argument count
- * @argc: argument vector
+ * @argv: argument vector
  * Return: 0
  */
 int main(int argc, char *argv[])
