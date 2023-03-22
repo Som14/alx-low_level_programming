@@ -1,0 +1,1 @@
+strcuturea typedef
