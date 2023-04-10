@@ -1,47 +1,35 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-char *create_buffer(char *file);
-void close_file(int fd);
 
 /**
- * create_buffer - allocates 1024 bytes for a buffer
- * @file: the name of the file buffer is storing chars for
+ * append_text_to_file - appends text at the end of a file.
+ * @filename: pointer to the name of the file.
+ * @text_content: the string to add to the end of the file.
  *
- * Return: a pointer to the newly-allocated buffer
+ * Return: if the function fails or filename is NULL - -1.
+ * if the file does not exist the user lacks write permissions - -1.
+ * otherwise - 1.
  */
 
-char *create_buffer(char *file)
+int append_text_to_file(const char *filename, char *text_content)
 {
-	char *buffer;
+	int o, w, length = 0;
 
-	buffer = malloc(sizeof(char) * 1024);
+	if (filename == NULL)
+		return (-1);
 
-	if (buffer == NULL)
+	if (text_content != NULL)
 	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", file);
-		exit(99);
+		for (length = 0; text_content[len];)
+			length++;
 	}
 
-	return (buffer);
-}
+	o = open(filename, O_WRONLY | O_APPEND);
+	w = write(o, text_content, length);
 
-/**
- * close_file - closes file descriptors
- * @fd: the file descriptor to be closed
- */
+	if (o == -1 || w == -1)
+		return (-1);
 
-void close_file(int fd)
-{
-	int c;
+	close(o);
 
-	c = close(fd);
-
-	if (c == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(100);
-	}
+	return (1);
 }
